@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "build": "css-compile",
+    "build": "npm-run-all css-compile",
     "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 5 styles/scss/ -o styles/css/",
     "trim": "npm-run-all trim-scss-log trim-scss",
     "trim-scss": "find . -name '*.scss' -type f -delete",
