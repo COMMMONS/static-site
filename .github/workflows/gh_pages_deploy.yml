@@ -1,0 +1,78 @@
+name: GitHub Pages Deploy
+on:
+  # Only run on pushes to the master branch that changed files in the `site-root/` directory
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # checkout `gh-pages` branch
+      - name: checkout master branch
+        uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+          persist-credentials: false
+      # remove all files from the `gh-pages` checkout
+      # we want to start with a clean slate
+      - name: remove all files
+        run: |
+          rm -rf *
+      # checkout `master` branch to the `temp/` directory
+      - name: checkout dev branch
+        uses: actions/checkout@v2
+        with:
+          path: temp
+          ref: master
+          persist-credentials: false
+      # Set the node.js version
+      - name: Set Node.js version
+        uses: actions/setup-node@v1
+        with:
+          node-version: "${{ env.NODE }}"
+
+      # Get the current versions of node and npm
+      - run: node --version
+      - run: npm --version
+
+      # go into the temp directory, and setup our node project
+      - name: Install npm dependencies
+        run: |
+          cd temp
+          npm ci
+      # run npm build in temp folder to create files
+      - name: run npm build
+        run: |
+          cd temp
+          npm run build
+      # since we only need the outputted [.css] files, we can search through our folders and remove any traces of
+      # remaining [.scss] files
+      - name: Remove leftover SCSS [.scss] files
+        run: |
+          cd temp
+          npm run trim
+      # move the `temp` files into root dir and remove others.
+      - name: move files
+        run: |
+          mv temp/* ./
+          rm -rf temp
+      # commit changes
+      - name: Commit files for change
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit --message "Pushed brand-new site files" --allow-empty
+      # push files into `gh-pages` branch
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          force: true
