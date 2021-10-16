@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       # checkout `gh-pages` branch
@@ -46,6 +46,11 @@ jobs:
         run: |
           cd temp
           npm ci
+      # remove any directories that are going to be overwritten in the build process
+      - name: Clean
+        run: |
+          cd temp
+          rm -rf styles/
       # run npm build in temp folder to create files
       - name: run npm build
         run: |
