@@ -55,6 +55,7 @@ jobs:
       - name: run npm build
         run: |
           cd temp
+          ls
           npm run build
       # since we only need the outputted [.css] files, we can search through our folders and remove any traces of
       # remaining [.scss] files
