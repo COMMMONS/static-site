@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #2f2f2f;;
+  margin: 0;
+  /*position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;*/
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  z-index: 5;
+  background-color: rgba(39,40,44,.8);
+  backdrop-filter: blur(3px);
+  height: max-content;
+}
+.header div.blur {
+
+}
+
+.header .h-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  &.block {
+
+    display: flex;
+    align-items: center;
+  }
+}
+
+.top {
+  top: 0;
+  background-color: #2f2f2f;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+  width: 100%;
+  height: 100vh;
+  padding-right: 5rem;
+  padding-left: 5rem;
+}
+.content {
+  /*position: absolute;*/
+  background-color: white;
+  /*padding-top: 4rem;
+  padding-bottom: 4rem;*/
+  padding-right: 15rem;
+  padding-left: 15rem;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+.footer {
+  border-top: 1px solid lightgray;
+  background-color: black;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  padding-right: 15rem;
+  padding-left: 15rem;
+}
+
+
+.size {
+  height: 20rem;
+  &.-tiny {
+    height: 2rem;
+  }
+  &.-small {
+    height: 5rem;
+  }
+  &.-medium {
+    height: 10rem;
+  }
+  &.-normal {
+    height: 20rem;
+  }
+  &.-large {
+    height: 30rem;
+  }
+  &.-x-large {
+    height: 40rem;
+  }
+  &.-xx-large {
+    height: 60rem;
+  }
+  &.-xxx-large {
+    height: 80rem;
+  }
+  &.-full-page {
+    height: 100vh;
+  }
+  &.-fit-page {
+    height: calc(100vh - 7rem);
+  }
+}

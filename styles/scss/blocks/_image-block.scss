@@ -1,0 +1,45 @@
+.image-block {
+  height: 90%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+}
+.image-block.dark {
+  filter: drop-shadow(0.25rem 0.25rem 0.5rem #2b2b2b);
+}
+.image-block.light {
+  filter: drop-shadow(0.25rem 0.25rem 0.5rem lightgray);
+}
+.image-block img {
+  width: 105%;
+  height: 105%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  filter: blur(8px);
+  margin: -5px;
+}
+.image-block.screen-fit {
+  height: calc(100vh - 7rem);
+}
+
+.image-block h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+.image-block h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}

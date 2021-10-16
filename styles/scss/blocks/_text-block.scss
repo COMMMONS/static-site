@@ -1,0 +1,32 @@
+.text-block {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  &.center,
+  &.centre{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+  &.left {
+    justify-content: left;
+    text-align: left;
+  }
+  &.right {
+    justify-content: right;
+    text-align: right;
+  }
+  &.restrictive {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+  &.tight {
+    padding-left: 15rem;
+    padding-right: 15rem;
+  }
+  &.narrow {
+    padding-left: 20rem;
+    padding-right: 20rem;
+  }
+}
