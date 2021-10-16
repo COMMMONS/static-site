@@ -1,0 +1,351 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;900&display=swap");
+.colour-black {
+  color: black;
+}
+
+.colour-grey {
+  color: grey;
+}
+
+.colour-red {
+  color: red;
+}
+
+.colour-orange {
+  color: orange;
+}
+
+.colour-yellow {
+  color: yellow;
+}
+
+h1, h2, h3, h4, h5, h6, a, p, b, i, body {
+  font-family: "Work Sans", sans-serif;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 10rem;
+  letter-spacing: -0.05rem;
+}
+
+h2 {
+  font-size: 8.75rem;
+  letter-spacing: -0.0875rem;
+}
+
+h3 {
+  font-size: 6.25rem;
+  letter-spacing: -0.1625rem;
+}
+
+h4 {
+  font-size: 3rem;
+  letter-spacing: -0.1625rem;
+}
+
+h5 {
+  font-size: 2rem;
+}
+
+h6 {
+  font-size: 1.5rem;
+}
+
+.h-content a {
+  vertical-align: middle;
+  color: white;
+  z-index: 5;
+}
+
+.h-content a.title {
+  margin-left: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.h-content a.link {
+  margin-left: 1rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding: 0.5rem;
+}
+
+.h-content a.link:hover {
+  border-radius: 0.5rem;
+  background-color: rgba(5, 5, 5, 0.1);
+}
+
+.h-content a.link:active {
+  padding-bottom: 1.5rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: 2px solid white;
+}
+
+.h-content a.button {
+  margin-left: 1.5rem;
+  right: 0;
+  position: relative;
+}
+
+.h-content a.button.right {
+  text-align: right;
+}
+
+.h-content span.divider {
+  height: 1rem;
+  margin-left: 1.5rem;
+  border-left: 1px solid dimgrey;
+}
+
+.footer a, .footer p {
+  color: white;
+  font-size: 1rem;
+}
+
+.footer a.quick-links {
+  padding-right: 1.5rem;
+}
+
+.footer p.copyright {
+  color: lightgray;
+  font-size: 0.8rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #2f2f2f;
+  margin: 0;
+  /*position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;*/
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  z-index: 5;
+  background-color: rgba(39, 40, 44, 0.8);
+  backdrop-filter: blur(3px);
+  height: max-content;
+}
+
+.header .h-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.header .h-content.block {
+  display: flex;
+  align-items: center;
+}
+
+.top {
+  top: 0;
+  background-color: #2f2f2f;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+  width: 100%;
+  height: 100vh;
+  padding-right: 5rem;
+  padding-left: 5rem;
+}
+
+.content {
+  /*position: absolute;*/
+  background-color: white;
+  /*padding-top: 4rem;
+  padding-bottom: 4rem;*/
+  padding-right: 15rem;
+  padding-left: 15rem;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+.footer {
+  border-top: 1px solid lightgray;
+  background-color: black;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  padding-right: 15rem;
+  padding-left: 15rem;
+}
+
+.size {
+  height: 20rem;
+}
+
+.size.-tiny {
+  height: 2rem;
+}
+
+.size.-small {
+  height: 5rem;
+}
+
+.size.-medium {
+  height: 10rem;
+}
+
+.size.-normal {
+  height: 20rem;
+}
+
+.size.-large {
+  height: 30rem;
+}
+
+.size.-x-large {
+  height: 40rem;
+}
+
+.size.-xx-large {
+  height: 60rem;
+}
+
+.size.-xxx-large {
+  height: 80rem;
+}
+
+.size.-full-page {
+  height: 100vh;
+}
+
+.size.-fit-page {
+  height: calc(100vh - 7rem);
+}
+
+.image-block {
+  height: 90%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.image-block.dark {
+  filter: drop-shadow(0.25rem 0.25rem 0.5rem #2b2b2b);
+}
+
+.image-block.light {
+  filter: drop-shadow(0.25rem 0.25rem 0.5rem lightgray);
+}
+
+.image-block img {
+  width: 105%;
+  height: 105%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  filter: blur(8px);
+  margin: -5px;
+}
+
+.image-block.screen-fit {
+  height: calc(100vh - 7rem);
+}
+
+.image-block h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.image-block h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.text-block {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.text-block.center, .text-block.centre {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.text-block.left {
+  justify-content: left;
+  text-align: left;
+}
+
+.text-block.right {
+  justify-content: right;
+  text-align: right;
+}
+
+.text-block.restrictive {
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+
+.text-block.tight {
+  padding-left: 15rem;
+  padding-right: 15rem;
+}
+
+.text-block.narrow {
+  padding-left: 20rem;
+  padding-right: 20rem;
+}
+
+.divider-block {
+  height: 20rem;
+}
+
+.button {
+  display: inline-block;
+  line-height: normal;
+  white-space: nowrap;
+  vertical-align: baseline;
+  text-align: center;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  padding: 0.5em 1em;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+}
+
+/*# sourceMappingURL=style.css.map */
